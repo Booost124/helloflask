@@ -5,6 +5,7 @@
     :copyright: © 2018 Grey Li
     :license: MIT, see LICENSE for more details.
 """
+# 使用Flask提供的渲染函数render_template()
 import os
 from flask import Flask, render_template, flash, redirect, url_for, Markup
 
@@ -34,7 +35,8 @@ movies = [
 
 @app.route('/watchlist')
 def watchlist():
-    # 调用模版watchlist.html 
+    # 调用模版watchlist.html
+    # 渲染模版，并返回响应
     return render_template('watchlist.html', user=user, movies=movies)
 
 
