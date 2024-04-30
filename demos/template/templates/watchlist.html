@@ -5,6 +5,8 @@
     <title>{{ user.username }}'s Watchlist</title>
 </head>
 <body>
+{# <a>超链接标签  url_for返回index 的地址也可以是别的 按照自上而下的顺序#}
+{#&larr; 表示左箭头 ＆copy; 来显示版权标#}
 <a href="{{ url_for('index') }}">&larr; Return</a>
 <h2>{{ user.username }}</h2>
 {% if user.bio %}
@@ -13,6 +15,7 @@
     <i>This user has not provided a bio.</i>
 {% endif %}
 {# Below is the movie list (this is comment) #}
+{# 下面是电影清单 #}
 <h5>{{ user.username }}'s Watchlist ({{ movies|length }}):</h5>
 <ul>
     {% for movie in movies %}
